@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{40E320ED-E136-4C47-8EBB-552C8CD5F20A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>taskgraphsimulationlibrary</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level2</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SYSTEMC_ROOT)\src;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>systemc.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SYSTEMC_ROOT)\msvc80\SystemC\Debug;$(BOOST_ROOT)\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level2</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(SYSTEMC_ROOT)\src;$(BOOST_ROOT);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <AdditionalOptions>/vmg %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Lib>
+      <AdditionalDependencies>systemc.lib</AdditionalDependencies>
+    </Lib>
+    <Lib>
+      <AdditionalLibraryDirectories>$(SYSTEMC_ROOT)\msvc80\SystemC\Release;$(BOOST_ROOT)\stage\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\Hierarchical_Task.cpp" />
+    <ClCompile Include="..\src\IfVertex.cpp" />
+    <ClCompile Include="..\src\Interconnect_Base.cpp" />
+    <ClCompile Include="..\src\Memory.cpp" />
+    <ClCompile Include="..\src\PayloadManager.cpp" />
+    <ClCompile Include="..\src\ProcessUnit_Base.cpp" />
+    <ClCompile Include="..\src\Subject.cpp" />
+    <ClCompile Include="..\src\Task_Base.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\AddVertex.h" />
+    <ClInclude Include="..\src\BitAndVertex.h" />
+    <ClInclude Include="..\src\BitNotVertex.h" />
+    <ClInclude Include="..\src\BitOrVertex.h" />
+    <ClInclude Include="..\src\BitXorVertex.h" />
+    <ClInclude Include="..\src\DivVertex.h" />
+    <ClInclude Include="..\src\EqualVertex.h" />
+    <ClInclude Include="..\src\GEqualVertex.h" />
+    <ClInclude Include="..\src\GreaterVertex.h" />
+    <ClInclude Include="..\src\Hierarchical_Task.h" />
+    <ClInclude Include="..\src\IfVertex.h" />
+    <ClInclude Include="..\src\Interconnect_Base.h" />
+    <ClInclude Include="..\src\LEqualVertex.h" />
+    <ClInclude Include="..\src\LogicAndVertex.h" />
+    <ClInclude Include="..\src\LogicOrVertex.h" />
+    <ClInclude Include="..\src\LowerVertex.h" />
+    <ClInclude Include="..\src\LShiftVertex.h" />
+    <ClInclude Include="..\src\Memory.h" />
+    <ClInclude Include="..\src\ModVertex.h" />
+    <ClInclude Include="..\src\MulVertex.h" />
+    <ClInclude Include="..\src\NotEqualVertex.h" />
+    <ClInclude Include="..\src\NotVertex.h" />
+    <ClInclude Include="..\src\Observer.h" />
+    <ClInclude Include="..\src\ObserverInterconnect.h" />
+    <ClInclude Include="..\src\ObserverManager.h" />
+    <ClInclude Include="..\src\PayloadManager.h" />
+    <ClInclude Include="..\src\PostDecVertex.h" />
+    <ClInclude Include="..\src\PostIncVertex.h" />
+    <ClInclude Include="..\src\PreDecVertex.h" />
+    <ClInclude Include="..\src\PreIncVertex.h" />
+    <ClInclude Include="..\src\ProcessUnit_Base.h" />
+    <ClInclude Include="..\src\RShiftVertex.h" />
+    <ClInclude Include="..\src\Subject.h" />
+    <ClInclude Include="..\src\SubVertex.h" />
+    <ClInclude Include="..\src\Task_Base.h" />
+    <ClInclude Include="..\src\Typedefinitions.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
